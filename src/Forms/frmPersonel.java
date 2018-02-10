@@ -17,8 +17,30 @@ public class frmPersonel extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmPersonel
      */
+    public static boolean kimlikDogrula(String kimlikNo) {
+     if (kimlikNo.length() != 11)
+          return false;
+     int[] hane = new int[11];
+     int toplam = 0;
+     for (int i = 0; i < 11; i++) {
+          hane[i] = Integer.parseInt(String.valueOf(kimlikNo.charAt(i)));
+          toplam += hane[i];
+     }
+     toplam -= hane[10];
+     if ((toplam % 10) != hane[10])
+          return false;
+     if (((hane[0] + hane[2] + hane[4] + hane[6] + hane[8]) * 7 + (hane[1] + hane[3] + hane[5] + hane[7]) * 9) % 10 != hane[9])
+          return false;
+     if (((hane[0] + hane[2] + hane[4] + hane[6] + hane[8]) * 8) % 10 != hane[10])
+          return false;
+     return true;
+}
+    
+    
+    
     public frmPersonel() {
         initComponents();
+        
        
 
     }
@@ -32,26 +54,57 @@ public class frmPersonel extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        txtKimlikNo = new javax.swing.JTextField();
+        btnKontrol = new javax.swing.JButton();
+
         setMaximizable(true);
+
+        txtKimlikNo.setText("jTextField1");
+
+        btnKontrol.setText("Kontrol");
+        btnKontrol.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKontrolActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(txtKimlikNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(btnKontrol)))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addComponent(txtKimlikNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnKontrol)
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnKontrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKontrolActionPerformed
+            kimlikDogrula(txtKimlikNo.getText());
+    }//GEN-LAST:event_btnKontrolActionPerformed
 
 
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKontrol;
+    private javax.swing.JTextField txtKimlikNo;
     // End of variables declaration//GEN-END:variables
 }
