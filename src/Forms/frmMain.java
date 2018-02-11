@@ -6,6 +6,9 @@
 package Forms;
 
 import java.awt.Desktop;
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -40,15 +43,15 @@ public class frmMain extends javax.swing.JFrame {
         mTanim = new javax.swing.JMenu();
         mPersonel = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        mFirma = new javax.swing.JMenuItem();
         mKasa = new javax.swing.JMenuItem();
+        mFirma = new javax.swing.JMenuItem();
+        mKargo = new javax.swing.JMenuItem();
         mTeknik = new javax.swing.JMenu();
-        mKargo = new javax.swing.JMenu();
+        mKargoTakip = new javax.swing.JMenu();
         mRaporlar = new javax.swing.JMenu();
         mAyarlar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
@@ -80,19 +83,37 @@ public class frmMain extends javax.swing.JFrame {
         });
         mTanim.add(jMenuItem1);
 
+        mKasa.setText("Kasa");
+        mKasa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mKasaActionPerformed(evt);
+            }
+        });
+        mTanim.add(mKasa);
+
         mFirma.setText("Firma");
+        mFirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mFirmaActionPerformed(evt);
+            }
+        });
         mTanim.add(mFirma);
 
-        mKasa.setText("Kasa");
-        mTanim.add(mKasa);
+        mKargo.setText("Kargo");
+        mKargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mKargoActionPerformed(evt);
+            }
+        });
+        mTanim.add(mKargo);
 
         jMenuBar1.add(mTanim);
 
         mTeknik.setText("Teknik Servis");
         jMenuBar1.add(mTeknik);
 
-        mKargo.setText("Kargo Takip ");
-        jMenuBar1.add(mKargo);
+        mKargoTakip.setText("Kargo Takip ");
+        jMenuBar1.add(mKargoTakip);
 
         mRaporlar.setText("Raporlar");
         jMenuBar1.add(mRaporlar);
@@ -117,17 +138,41 @@ public class frmMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-
+        frmMusteri frmMusteriTanim = new frmMusteri();
+        Desktop.add(frmMusteriTanim);
+        frmMusteriTanim.setVisible(true);
+        try {
+            frmMusteriTanim.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void mPersonelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mPersonelActionPerformed
         frmPersonel frmPersonelTanim = new frmPersonel();
         Desktop.add(frmPersonelTanim);
         frmPersonelTanim.setVisible(true);
-              
+        try {
+            frmPersonelTanim.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.setDefaultCloseOperation(3);
         //this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_mPersonelActionPerformed
+
+    private void mFirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mFirmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mFirmaActionPerformed
+
+    private void mKargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mKargoActionPerformed
+
+    private void mKasaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mKasaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mKasaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +215,8 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenu mAyarlar;
     private javax.swing.JMenuItem mFirma;
-    private javax.swing.JMenu mKargo;
+    private javax.swing.JMenuItem mKargo;
+    private javax.swing.JMenu mKargoTakip;
     private javax.swing.JMenuItem mKasa;
     private javax.swing.JMenuItem mPersonel;
     private javax.swing.JMenu mRaporlar;

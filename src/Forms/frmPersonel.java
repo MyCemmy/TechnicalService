@@ -19,7 +19,6 @@ public class frmPersonel extends javax.swing.JInternalFrame {
      */
     public frmPersonel() {
         initComponents();
-
     }
 
     /**
@@ -31,53 +30,25 @@ public class frmPersonel extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtKimlikNo = new javax.swing.JTextField();
-        btnKontrol = new javax.swing.JButton();
-
-        setMaximizable(true);
-
-        txtKimlikNo.setText("jTextField1");
-
-        btnKontrol.setText("Kontrol");
-        btnKontrol.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnKontrolActionPerformed(evt);
-            }
-        });
+        setClosable(true);
+        setTitle("Personel Tanim");
+        setPreferredSize(new java.awt.Dimension(640, 480));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(txtKimlikNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(btnKontrol)))
-                .addContainerGap(159, Short.MAX_VALUE))
+            .addGap(0, 443, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
-                .addComponent(txtKimlikNo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnKontrol)
-                .addContainerGap(110, Short.MAX_VALUE))
+            .addGap(0, 345, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnKontrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKontrolActionPerformed
-    }//GEN-LAST:event_btnKontrolActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnKontrol;
-    private javax.swing.JTextField txtKimlikNo;
     // End of variables declaration//GEN-END:variables
 }

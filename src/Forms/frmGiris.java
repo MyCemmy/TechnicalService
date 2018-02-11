@@ -43,6 +43,8 @@ public class frmGiris extends javax.swing.JFrame {
         setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setToolTipText("");
+        jPanel2.setName("Teknik Servis Takip"); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtGiris.setText("jTextField2");

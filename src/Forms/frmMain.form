@@ -25,15 +25,29 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mFirma">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Firma"/>
-              </Properties>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mKasa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Kasa"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mKasaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mFirma">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Firma"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mFirmaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mKargo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kargo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mKargoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -42,7 +56,7 @@
             <Property name="text" type="java.lang.String" value="Teknik Servis"/>
           </Properties>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mKargo">
+        <Menu class="javax.swing.JMenu" name="mKargoTakip">
           <Properties>
             <Property name="text" type="java.lang.String" value="Kargo Takip "/>
           </Properties>
@@ -62,9 +76,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[800, 600]"/>
-    </Property>
     <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
