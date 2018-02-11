@@ -17,31 +17,8 @@ public class frmPersonel extends javax.swing.JInternalFrame {
     /**
      * Creates new form frmPersonel
      */
-    public static boolean kimlikDogrula(String kimlikNo) {
-     if (kimlikNo.length() != 11)
-          return false;
-     int[] hane = new int[11];
-     int toplam = 0;
-     for (int i = 0; i < 11; i++) {
-          hane[i] = Integer.parseInt(String.valueOf(kimlikNo.charAt(i)));
-          toplam += hane[i];
-     }
-     toplam -= hane[10];
-     if ((toplam % 10) != hane[10])
-          return false;
-     if (((hane[0] + hane[2] + hane[4] + hane[6] + hane[8]) * 7 + (hane[1] + hane[3] + hane[5] + hane[7]) * 9) % 10 != hane[9])
-          return false;
-     if (((hane[0] + hane[2] + hane[4] + hane[6] + hane[8]) * 8) % 10 != hane[10])
-          return false;
-     return true;
-}
-    
-    
-    
     public frmPersonel() {
         initComponents();
-        
-       
 
     }
 
@@ -96,11 +73,7 @@ public class frmPersonel extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnKontrolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKontrolActionPerformed
-            kimlikDogrula(txtKimlikNo.getText());
     }//GEN-LAST:event_btnKontrolActionPerformed
-
-
-
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
